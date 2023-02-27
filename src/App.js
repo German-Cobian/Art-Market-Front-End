@@ -4,6 +4,7 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 import useAuth from './hooks/useAuth';
 import Signup from './components/Signup';
 import Login from './components/Login';
+import TestPage from './components/TestPage';
 
 function App() {
   const { authChecked, loggedIn } = useAuth();
@@ -14,7 +15,7 @@ function App() {
         <Route path="/login" element={<Login loggedIn={loggedIn} />} />
         <Route path="/signup" element={<Signup />} />
         <Route element={<ProtectedRoutes isAllowed={loggedIn} authChecked={authChecked} redirectPath="/login" />}>
-          <Route path="/" element={<h1>Test Page</h1>} />
+          <Route path="/" element={<TestPage />} />
         </Route>
       </Routes>
     </Router>
