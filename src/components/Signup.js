@@ -19,17 +19,17 @@ const Signup = () => {
 
   return (
     <main className="">
-      <div className="">
-        <div className="">
+      <div className="d-flex flex-row justify-content-center">
+        <div className="my-5 mx-5 border border-dark">
           <div className="">
-            <h2 className="">Sign Up</h2>
+            <h2 className="my-5 mx-5">Sign Up</h2>
           </div>
           {error && <p className="">{error}</p>}
           {errors.username && <p className="">Username is required</p>}
           {errors.email && <p className="">Email is required</p>}
           {errors.password && <p className="">Password is required</p>}
-          <form className="" onSubmit={handleSubmit(onFormSubmit)}>
-            <div className="">
+          <form className="mx-5" onSubmit={handleSubmit(onFormSubmit)}>
+            <div className="mb-3">
               <input
                 className=""
                 type="text"
@@ -37,28 +37,28 @@ const Signup = () => {
                 {...register('username', { required: 'Username is required' })}
               />
             </div>
-            <div className="">
+            <div className="mb-3">
               <input
                 className=""
-                type="email"
+                type="text"
                 placeholder="Email"
                 {...register('email', { required: 'Email is required' })}
               />
             </div>
-            <div className="">
+            <div className="mb-3">
               <input
                 className=""
-                type="password"
+                type="text"
                 placeholder="Password"
                 {...register('password', { required: 'Password is required' })}
               />
             </div>
             <input
-              className=""
+              className="my-5"
               type="submit"
               value="Sign Up"
             />
-            <Link className="" to="/login">Log In</Link>
+            <Link className="my-5 mx-5" to="/">Log In</Link>
           </form>
         </div>
       </div>
