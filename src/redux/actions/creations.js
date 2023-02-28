@@ -12,7 +12,7 @@ export const displayJourneymen = () => async (dispatch) => {
   if (response.ok) {
     const data = await response.json();
     const creations = data.map((creation) => creation.attributes);
-    dispatch({ type: FETCH_CREATIONS, payload: journeymen });
+    dispatch({ type: FETCH_CREATIONS, payload: creations });
     } else {
   dispatch({ type: FETCH_CREATIONS, payload: [] });
   }
